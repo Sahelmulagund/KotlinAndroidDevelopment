@@ -14,7 +14,7 @@ class Widgets : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_list_items, container, false)
+        return inflater.inflate(R.layout.fragment_widgets, container, false)
     }
 
 

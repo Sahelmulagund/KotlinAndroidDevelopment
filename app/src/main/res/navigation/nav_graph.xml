@@ -30,7 +30,15 @@
         android:id="@+id/ThirdFragment"
         android:name="com.icg.training.Widgets"
         android:label="Widgets"
-        tools:layout="@layout/fragment_list_items">
+        tools:layout="@layout/fragment_widgets">
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/DialogFragment"
+        android:name="com.icg.training.DialogFragment"
+        android:label="Dialog"
+        tools:layout="@layout/fragment_dialog">
 
 
     </fragment>

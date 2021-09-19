@@ -64,6 +64,12 @@ class MainActivity : AppCompatActivity() {
 
                 true
             }
+            R.id.action_dialog-> {
+                findNavController(R.id.nav_host_fragment_content_main).popBackStack()
+                findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.DialogFragment)
+
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
