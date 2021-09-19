@@ -1,0 +1,22 @@
+<resources>
+   <string name="app_name">Dialogs</string>
+    <string name="enter_text">enter text</string>
+    <string name="check_box">Check box</string>
+    <string name="simple_dialog">simple dialog</string>
+    <string name="single_choice_dialog">Single choice dialog</string>
+    <string name="multi_choice_dialog">Multi Choice Dialog</string>
+    <string name="progress_dialog">Progress Dialog</string>
+    <string name="date_picker_dialog">Date Picker Dialog</string>
+    <string name="time_picker_dialog">Time Picker Dialog</string>
+    <string name="bottom_dialog">Bottom Dialog</string>
+    <string name="okay">OKAY</string>
+    <string name="list_items">List Items</string>
+
+
+    <string name="dialogs">Dialogs</string>
+    <string name="cancel_button">Cancel button</string>
+    <string name="rename_file">Rename File</string>
+    <string name="save">Save</string>
+    <string name="enter_file_name">Enter File Name</string>
+    <string name="file_name">File Name</string>
+</resources>
