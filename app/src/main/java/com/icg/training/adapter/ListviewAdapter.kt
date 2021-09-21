@@ -26,7 +26,7 @@ class ListviewAdapter(internal var context: Context, internal var infoModelList 
         var  androidReleasedDate = view!!.findViewById(R.id.releasedDate)as TextView
         var androidDesc = view!!.findViewById(R.id.desc)as TextView
 
-        androidFirstLetter!!.setText(infoModelList.get(position).androidFirstLetter)
+        androidFirstLetter!!.setText(infoModelList.get(position).androidName?.get(0).toString())
        androidName!!.setText(infoModelList.get(position).androidName)
         androidDesc!!.setText(infoModelList.get(position).androidDesc)
        androidReleasedDate!!.setText(infoModelList.get(position).releaseDate)

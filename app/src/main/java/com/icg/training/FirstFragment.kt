@@ -1,16 +1,21 @@
 package com.icg.training
 
+import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.icg.training.adapter.AndroidInfoAdapter
+import com.icg.training.data_provider.DataProvider
 import com.icg.training.databinding.FragmentFirstBinding
 import com.icg.training.model.InfoModel
+import kotlinx.android.synthetic.main.fragment_first.*
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -24,16 +29,7 @@ class FirstFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    var itemList:MutableList<InfoModel> = mutableListOf(
-      InfoModel(androidVersion = 4.1,androidName = "Jelly Bean", androidFirstLetter = "J",
-               androidSdk = 16, androidDesc = "Isolated services, Memory Management... ",releaseDate = "October 2012"),
 
-        InfoModel(androidVersion = 4.4,androidName = "KitKat", androidFirstLetter = "K",
-            androidSdk = 19, androidDesc = "Update your target API level... ", releaseDate = "December 2013"),
-        InfoModel(androidVersion = 5.0,androidName = "Lollipop", androidFirstLetter = "L",
-            androidSdk = 21, androidDesc = "Multiple SIM card support... ",releaseDate = "March 2015")
-
-    )
 
 
     override fun onCreateView(
@@ -43,21 +39,33 @@ class FirstFragment : Fragment() {
         (activity as MainActivity).supportActionBar?.title = "RecyclerView"
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
 
+        initView()
+        initClicks()
+        loadData()
 
         return binding.root
 
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    private fun initView() {
+        binding.recyclerAndroidVersions.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = AndroidInfoAdapter(::onItemClicked, ::showDeleteAlert)
+        }
+    }
 
-        binding.recyclerAndroidVersions.setHasFixedSize(true)
-        val lm = LinearLayoutManager(context)
-        lm.orientation = RecyclerView.VERTICAL
-        binding.recyclerAndroidVersions.layoutManager = lm
-        val adapter = AndroidInfoAdapter(requireContext(),itemList)
-        binding.recyclerAndroidVersions.adapter = adapter
+    private fun initClicks(){
 
+    }
+
+    private fun onItemClicked(selectedItem:InfoModel?){
+        Toast.makeText(context, selectedItem?.androidName, Toast.LENGTH_SHORT).show()
+    }
+    private fun loadData(){
+        (binding.recyclerAndroidVersions.adapter as AndroidInfoAdapter).versionListItems =
+            DataProvider.getAndroidDetails()
+    }
+    private fun showDeleteAlert(deleteItemPosition:Int){
 
     }
 
