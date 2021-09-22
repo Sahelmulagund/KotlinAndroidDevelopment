@@ -14,8 +14,8 @@ import com.icg.training.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityMainBinding
-
+    lateinit var binding: ActivityMainBinding
+    private var menuItemClick = -1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -26,15 +26,11 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
-
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+        findNavController(R.id.nav_host_fragment_content_main).popBackStack()
+        navController.navigate(R.id.action_recycler_items)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -53,19 +49,19 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.action_list_items -> {
-                findNavController(R.id.nav_host_fragment_content_main).popBackStack()
+
                 findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.SecondFragment)
 
                 true
             }
             R.id.action_widgets -> {
-                findNavController(R.id.nav_host_fragment_content_main).popBackStack()
+
                 findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.ThirdFragment)
 
                 true
             }
             R.id.action_dialog-> {
-                findNavController(R.id.nav_host_fragment_content_main).popBackStack()
+
                 findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.DialogFragment)
 
                 true

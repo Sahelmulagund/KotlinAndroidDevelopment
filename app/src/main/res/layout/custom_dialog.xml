@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/d10"
+    app:cardElevation="@dimen/d10"
+
+    app:cardCornerRadius="@dimen/d10">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtName"
+            android:padding="@dimen/padding_16_dp"
+            android:hint="@string/version_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_16_dp"
+            android:textColor="@color/teal_200"
+            android:text="@string/version"
+            android:id="@+id/versionList"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_16_dp"
+            android:textColor="@color/purple_200"
+            android:hint="Released on"
+            android:id="@+id/datePicker"
+            tools:ignore="HardcodedText" />
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_16_dp"
+
+            android:text="@string/minimum_sdk"
+            android:id="@+id/minSdk"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtDesc"
+            android:padding="@dimen/padding_16_dp"
+            android:hint="@string/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginTop="@dimen/d10"
+            android:id="@+id/btnAdd"
+            android:text="@string/add"
+            android:background="@color/blue"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:padding="@dimen/padding_16_dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

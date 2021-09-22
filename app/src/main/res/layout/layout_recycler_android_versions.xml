@@ -94,7 +94,13 @@
 
                 android:id="@+id/desc"/>
         </LinearLayout>
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_delete_24"
+            android:layout_gravity="end"
+            android:padding="@dimen/padding_16_dp"
+            android:id="@+id/deleteImg"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="version_array">
+        <item>1.0</item>
+        <item>1.5</item>
+        <item>1.6</item>
+        <item>2.0</item>
+        <item>2.0.x</item>
+        <item>2.3</item>
+        <item>3.0</item>
+        <item>4.0.1</item>
+        <item>4.1.x</item>
+        <item>4.4</item>
+        <item>5.0</item>
+        <item>6.0</item>
+        <item>7.0</item>
+        <item>8.0</item>
+        <item>9.0</item>
+        <item>10</item>
+        <item>11</item>
+    </string-array>
+    <string-array name="min_sdk">
+
+        <item>1</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>8</item>
+        <item>9</item>
+        <item>11</item>
+        <item>14</item>
+        <item>16</item>
+        <item>19</item>
+        <item>21</item>
+        <item>23</item>
+        <item>24</item>
+        <item>26</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+
+    </string-array>
+</resources>

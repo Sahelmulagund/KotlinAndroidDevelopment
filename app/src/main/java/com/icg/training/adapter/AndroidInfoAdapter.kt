@@ -13,7 +13,7 @@ import com.icg.training.listeners.IRecyclerItemClickListener
 import com.icg.training.model.InfoModel
 import kotlinx.android.synthetic.main.layout_recycler_android_versions.view.*
 
-class AndroidInfoAdapter(val callback:(InfoModel?) -> Unit, val deleteCallback:(Int)->Unit):RecyclerView.Adapter<AndroidInfoAdapter.VH>() {
+class AndroidInfoAdapter(val callback:(InfoModel?,Int) -> Unit, val deleteCallback:(Int)->Unit):RecyclerView.Adapter<AndroidInfoAdapter.VH>() {
 
 
   var versionListItems:ArrayList<InfoModel>?=null
@@ -28,10 +28,13 @@ class AndroidInfoAdapter(val callback:(InfoModel?) -> Unit, val deleteCallback:(
             with(itemView){
                 itemView.setOnClickListener {
                     //callback.invoke(itemView.tag as String)
-                    callback.invoke(versionListItems?.get(adapterPosition))
+                    callback.invoke(versionListItems?.get(adapterPosition),adapterPosition)
 
                 }
+                deleteImg.setOnClickListener {
+                    deleteCallback.invoke(adapterPosition)
 
+                }
             }
         }
 
@@ -50,6 +53,15 @@ class AndroidInfoAdapter(val callback:(InfoModel?) -> Unit, val deleteCallback:(
 
             }
         }
+    }
+    fun updateItem(position: Int,infoModel: InfoModel){
+        versionListItems?.set(position,infoModel)
+    }
+    fun insertItem(position: Int,infoModel: InfoModel){
+        versionListItems?.add(position,infoModel)
+    }
+    fun deleteItem(position: Int){
+        versionListItems?.removeAt(position)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         VH(LayoutInflater.from(parent.context).inflate(R.layout.layout_recycler_android_versions, parent, false))
