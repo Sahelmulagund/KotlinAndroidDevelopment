@@ -11,3 +11,7 @@ https://github.com/Sahelmulagund/Allwork/blob/Demos/20210918_162821.mp4
 #Task3:Dialogs-Demo
 
 https://github.com/Sahelmulagund/Allwork/blob/Demos/20210918_211541.mp4
+
+#Task4:Recycler Crud-Demo
+
+https://github.com/Sahelmulagund/Allwork/blob/Demos/20210922_145538.mp4
