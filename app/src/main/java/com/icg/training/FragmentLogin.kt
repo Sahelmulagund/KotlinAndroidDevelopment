@@ -36,6 +36,7 @@ class FragmentLogin : Fragment() {
 
     }
 
+
     private fun initView(){
         binding.signupTxt.setOnClickListener {
             (activity as AuthActivity).addReplaceFragment(RegisterFragment(), 2, "fragmentLogin")
@@ -75,6 +76,7 @@ class FragmentLogin : Fragment() {
 
 
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

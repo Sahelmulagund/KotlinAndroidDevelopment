@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
         findNavController(R.id.nav_host_fragment_content_main).popBackStack()
-        navController.navigate(R.id.action_recycler_items)
+        navController.navigate(R.id.ThirdFragment)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
