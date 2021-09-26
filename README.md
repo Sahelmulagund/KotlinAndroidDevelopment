@@ -19,4 +19,4 @@ https://github.com/Sahelmulagund/Allwork/blob/Demos/20210922_145538.mp4
 
 #Demo: AuthActivity- https://github.com/Sahelmulagund/Allwork/blob/6e002db6911ae3416fef267164f2107277370d49/20210925_231255.mp4
 
-#Demo FragmentSampleActivity-
+#Demo FragmentSampleActivity- https://github.com/Sahelmulagund/Allwork/blob/6e002db6911ae3416fef267164f2107277370d49/20210926_124351.mp4
