@@ -14,8 +14,8 @@ https://github.com/Sahelmulagund/Allwork/blob/Demos/20210918_211541.mp4
 
 https://github.com/Sahelmulagund/Allwork/blob/Demos/20210922_145538.mp4
 
-#Task 5: AuthActivity & FragmentSampleActivity
+#Task 5: Data transfer and login
 
-#Demo: AuthActivity- https://github.com/Sahelmulagund/Allwork/blob/6e002db6911ae3416fef267164f2107277370d49/20210925_231255.mp4
+#Demo: https://github.com/Sahelmulagund/Allwork/blob/Demos/20210927_030343.mp4
 
-#Demo FragmentSampleActivity- https://github.com/Sahelmulagund/Allwork/blob/6e002db6911ae3416fef267164f2107277370d49/20210926_124351.mp4
+
