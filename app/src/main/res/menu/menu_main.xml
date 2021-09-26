@@ -22,4 +22,9 @@
         android:orderInCategory="100"
         android:title="@string/dialogs"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_sample_fragment"
+        android:orderInCategory="100"
+        android:title="@string/fragment_sample_activity"
+        app:showAsAction="never" />
 </menu>

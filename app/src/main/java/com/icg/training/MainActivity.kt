@@ -1,5 +1,6 @@
 package com.icg.training
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -64,6 +65,11 @@ class MainActivity : AppCompatActivity() {
 
                 findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.DialogFragment)
 
+                true
+            }
+            R.id.action_sample_fragment->{
+                startActivity(Intent(this, FragmentSampleActivity::class.java))
+                finish()
                 true
             }
             else -> super.onOptionsItemSelected(item)

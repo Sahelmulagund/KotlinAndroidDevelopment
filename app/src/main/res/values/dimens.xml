@@ -1,7 +1,13 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="padding_16_dp">16dp</dimen>
-    <dimen name="text_size">20sp</dimen>
+    <dimen name="text_size">16sp</dimen>
     <dimen name="button_padding">10dp</dimen>
     <dimen name="d10">10dp</dimen>
+    <dimen name="cardCornerRadius">15dp</dimen>
+    <dimen name="cardElevation">10dp</dimen>
+    <dimen name="login_text">22sp</dimen>
+    <dimen name="edit_text">10sp</dimen>
+    <dimen name="padding_card">22dp</dimen>
+    <dimen name="margint_top">25dp</dimen>
 </resources>

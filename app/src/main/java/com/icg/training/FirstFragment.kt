@@ -204,7 +204,7 @@ class FirstFragment : Fragment() {
 
                   (binding.recyclerAndroidVersions.adapter as AndroidInfoAdapter).notifyItemChanged(position)
                   (binding.recyclerAndroidVersions.adapter as AndroidInfoAdapter).updateItem(position,infoModel)
-                 
+
 
 
                   Snackbar.make(binding.recyclerAndroidVersions, "${infoModel.androidName} updated",Snackbar.LENGTH_SHORT).show()

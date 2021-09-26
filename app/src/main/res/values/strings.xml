@@ -50,4 +50,22 @@
     <string name="add">ADD</string>
     <string name="minimum_sdk">Minimum SDK</string>
     <string name="description">Description...</string>
+    <string name="login">Login</string>
+    <string name="user_name">User name</string>
+    <string name="password">Password</string>
+    <string name="enter_password">Enter password</string>
+    <string name="enter_username">Enter username</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="register">Register</string>
+    <string name="login_here">Login here</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="fragment_sample_activity">Fragment sample activity</string>
+    <string name="fragment_1">Fragment 1</string>
+    <string name="send_to_fragment_two">Send to fragment two</string>
+    <string name="send_to_fragment_one">Send to fragment one</string>
+    <string name="fargment_2">Fargment 2</string>
+
 </resources>
