@@ -10,4 +10,8 @@
     <dimen name="edit_text">10sp</dimen>
     <dimen name="padding_card">22dp</dimen>
     <dimen name="margint_top">25dp</dimen>
+    <dimen name="mt_60_dp">60dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
 </resources>

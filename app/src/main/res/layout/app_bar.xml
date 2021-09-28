@@ -9,6 +9,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/app_bar"
         android:theme="@style/Theme.Training.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
@@ -21,5 +22,8 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
+<include
 
+    layout="@layout/content_practice"
+    />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -67,5 +67,16 @@
     <string name="send_to_fragment_two">Send to fragment two</string>
     <string name="send_to_fragment_one">Send to fragment one</string>
     <string name="fargment_2">Fargment 2</string>
+    <string name="label_btn_txt_finish">Finish</string>
+    <string name="label_home">Home</string>
+    <string name="label_search">Search</string>
+    <string name="label_profile">Profile</string>
+    <string name="label_orders">Orders</string>
+    <string name="label_bottom_nav_activity">Bottom Nav Activity</string>
+    <string name="title_activity_bottom_navigation">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="send">send</string>
 
 </resources>

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.icg.training.databinding.FragmentLoginBinding
 import com.icg.training.databinding.FragmentRegisterBinding
@@ -32,7 +33,9 @@ class RegisterFragment : Fragment() {
         sharedPreference = activity?.applicationContext?.getSharedPreferences(SHARED_PREFER_NAME, SHARED_PREFER_MODE)
 
         editor = sharedPreference?.edit()
-
+        binding.loginTxt.setOnClickListener {
+            (activity as AuthNavigationActivity).findNavController(R.id.nav_controller_auth).popBackStack()
+        }
         binding.registerBtn.setOnClickListener {
             if (binding.edtUsername.text.toString().trim().isEmpty()){
                 binding.edtUsername.error = "User name is required!"
@@ -56,7 +59,8 @@ class RegisterFragment : Fragment() {
             editor?.putString("confirmPassword", confirmPass)
             
             editor?.apply()
-            activity?.supportFragmentManager?.popBackStack()
+            (activity as AuthNavigationActivity).findNavController(R.id.nav_controller_auth).popBackStack()
+
             Snackbar.make(binding.regFrag, "Registered successfully! Please login",Snackbar.LENGTH_SHORT).show()
 
 

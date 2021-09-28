@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_16_dp"
+    android:layout_marginTop="@dimen/margint_top"
+
+    android:orientation="vertical"
+    >
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_orders"
+        android:layout_gravity="center"
+        android:id="@+id/dataRecv"
+        android:textSize="@dimen/text_size"
+        android:layout_marginTop="@dimen/margint_top"
+        android:gravity="center_horizontal"/>
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:maxLines="1"
+        android:layout_marginTop="@dimen/margint_top"
+        android:id="@+id/tietData"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/send"
+        android:textSize="@dimen/text_size"
+        android:id="@+id/btnSend"/>
+
+
+</LinearLayout>

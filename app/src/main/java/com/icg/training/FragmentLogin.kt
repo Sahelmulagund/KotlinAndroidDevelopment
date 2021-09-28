@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.icg.training.databinding.FragmentLoginBinding
 import kotlinx.android.synthetic.main.activity_auth.*
@@ -39,7 +40,8 @@ class FragmentLogin : Fragment() {
 
     private fun initView(){
         binding.signupTxt.setOnClickListener {
-            (activity as AuthActivity).addReplaceFragment(RegisterFragment(), 2, "fragmentLogin")
+
+            (activity as AuthNavigationActivity).findNavController(R.id.nav_controller_auth).navigate(R.id.registerFragment)
         }
         sharedPreference = activity?.getSharedPreferences(SHARED_PREFER_NAME, SHARED_PREFER_MODE)
 
@@ -67,8 +69,8 @@ class FragmentLogin : Fragment() {
                     return@setOnClickListener
                 }else{
                     Snackbar.make(binding.mainFrag, "Logged in successfully", Snackbar.LENGTH_SHORT).show()
-                    startActivity(Intent(context, MainActivity::class.java))
-                    activity?.finish()
+                    startActivity(Intent(context, PracticeNavigationActivity::class.java))
+                    (activity as AuthNavigationActivity).finish()
 
                 }
             }

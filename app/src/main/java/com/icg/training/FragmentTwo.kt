@@ -6,13 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.icg.training.databinding.FragmentLoginBinding
 import com.icg.training.databinding.FragmentTwoBinding
 
 
 class FragmentTwo : Fragment() {
-    private val fragmentOne by lazy {
-        FragmentOne()
+    private val fragmentThree by lazy {
+        FragmentThree()
     }
 
 
@@ -25,15 +26,6 @@ class FragmentTwo : Fragment() {
     ): View? {
 
         _binding = FragmentTwoBinding.inflate(inflater,container,false)
-        val args = this.arguments
-        if (args != null){
-            val dataRecv = args
-            if (dataRecv != null){
-
-                binding.dataRecv.text = dataRecv.getString("data", "")
-
-            }
-        }
 
         initView()
         return binding.root
@@ -42,13 +34,19 @@ class FragmentTwo : Fragment() {
     private fun initView() {
 
 
-        val args = Bundle()
+
+        val data = arguments?.getString("data", "")
+        binding.dataRecv.text = data
+
         binding.btnSend.setOnClickListener {
             if (binding.edtText.text.toString().isNotEmpty()){
-                val data = binding.edtText.text.toString()
+                val dataFromTwo = binding.edtText.text.toString()
+                val dataFromOne = binding.dataRecv.text.toString()
+                (activity as PracticeNavigationActivity).sendDataToFragThree(dataFromOne,dataFromTwo)
 
-                (activity as FragmentSampleActivity).sendDataToFragOne(fragmentOne, data)
-
+            }else{
+                binding.edtText.error = "Please input some data"
+                return@setOnClickListener
             }
 
         }

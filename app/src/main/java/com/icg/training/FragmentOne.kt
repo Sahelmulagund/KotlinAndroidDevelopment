@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.icg.training.databinding.FragmentOneBinding
+import kotlinx.android.synthetic.main.fragment_one.*
 
 
 class FragmentOne : Fragment() {
@@ -25,9 +27,7 @@ class FragmentOne : Fragment() {
     ): View {
         _binding = FragmentOneBinding.inflate(inflater,container,false)
 
-        if (arguments != null){
-            binding.dataRecv.setText(arguments?.getString("data",""))
-        }
+
 
         initView()
         return binding.root
@@ -36,13 +36,16 @@ class FragmentOne : Fragment() {
 
 
         binding.btnSend.setOnClickListener {
-
+                if (edtText.text.toString().isEmpty()){
+                    edtText.error = "Please enter some data"
+                    return@setOnClickListener
+                }
                 val data = binding.edtText.text.toString()
 
+            (activity as PracticeNavigationActivity).sendDataToFragTwo(data)
 //
-                args?.putString("dataFromOne", data)
-            (activity as FragmentSampleActivity).sendDataToFragTwo(fragmentTwo, data)
 
+//            (activity as FragmentSampleActivity).sendDataToFragTwo(fragmentTwo, data)
 
         }
 
@@ -52,6 +55,7 @@ class FragmentOne : Fragment() {
     }
 
     override fun onDestroyView() {
+
         super.onDestroyView()
         _binding = null
     }
