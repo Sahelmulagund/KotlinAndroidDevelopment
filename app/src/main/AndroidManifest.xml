@@ -8,18 +8,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Training">
-        <activity
-            android:name=".ui.BottomNavigationActivity"
-            android:label="@string/title_activity_bottom_navigation"></activity>
-        <activity android:name=".BottomNavigationActivity" />
-        <activity android:name=".PracticeNavigationActivity" />
-        <activity android:name=".AuthNavigationActivity">
+        <activity android:name=".ViewPager2SliderActivity"></activity>
+        <activity android:name=".TabsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.BottomNavigationActivity"
+            android:label="@string/title_activity_bottom_navigation" />
+        <activity android:name=".PracticeNavigationActivity" />
+        <activity android:name=".AuthNavigationActivity"></activity>
         <activity android:name=".FragmentSampleActivity" />
         <activity android:name=".AuthActivity" />
         <activity
