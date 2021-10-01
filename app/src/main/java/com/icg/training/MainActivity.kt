@@ -72,6 +72,23 @@ class MainActivity : AppCompatActivity() {
                 finish()
                 true
             }
+            R.id.action_practice_activity->{
+                startActivity(Intent(this, PracticeNavigationActivity::class.java))
+                true
+            }
+            R.id.action_tabs_activity ->{
+                startActivity(Intent(this, TabsActivity::class.java))
+                true
+            }
+            R.id.action_viewpager2_activity->{
+                startActivity(Intent(this, ViewPager2SliderActivity::class.java))
+                true
+            }
+            R.id.action_tabs_with_viewpager_activity->{
+                startActivity(Intent(this, TabsWithViewPager2Actvitiy::class.java))
+                true
+            }
+
             else -> super.onOptionsItemSelected(item)
         }
     }

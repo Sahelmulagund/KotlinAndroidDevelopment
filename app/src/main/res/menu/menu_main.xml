@@ -27,5 +27,25 @@
         android:orderInCategory="100"
         android:title="@string/fragment_sample_activity"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_practice_activity"
+        android:orderInCategory="100"
+        android:title="@string/act_practice_nav"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_tabs_activity"
+        android:orderInCategory="100"
+        android:title="@string/act_tabs"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_viewpager2_activity"
+        android:orderInCategory="100"
+        android:title="@string/act_slider"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_tabs_with_viewpager_activity"
+        android:orderInCategory="100"
+        android:title="@string/act_tabs_with_viewpager2"
+        app:showAsAction="never" />
 
 </menu>

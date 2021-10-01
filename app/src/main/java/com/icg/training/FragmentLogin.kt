@@ -69,7 +69,7 @@ class FragmentLogin : Fragment() {
                     return@setOnClickListener
                 }else{
                     Snackbar.make(binding.mainFrag, "Logged in successfully", Snackbar.LENGTH_SHORT).show()
-                    startActivity(Intent(context, PracticeNavigationActivity::class.java))
+                    startActivity(Intent(context, MainActivity::class.java))
                     (activity as AuthNavigationActivity).finish()
 
                 }

@@ -83,5 +83,9 @@
     <string name="call">Call</string>
     <string name="title_vp">ViewPager Activity</string>
     <string name="title_vp_with_tl">ViewPager TabLayout</string>
+    <string name="act_practice_nav">Practice Nav Actvitiy</string>
+    <string name="act_tabs_with_viewpager2">Tabs with ViewPager2</string>
+    <string name="act_slider">ViewPager2Slider</string>
+    <string name="act_tabs">Tabs</string>
 
 </resources>

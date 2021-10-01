@@ -1,24 +1,18 @@
 package com.icg.training
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import androidx.fragment.app.replace
-import androidx.navigation.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 import com.icg.training.adapter.ViewPager2Adapter
 import com.icg.training.databinding.ActivityTabsBinding
-import kotlinx.android.synthetic.main.activity_tabs.*
+import com.icg.training.databinding.ActivityTabsWithViewPager2ActvitiyBinding
 
-class TabsActivity : AppCompatActivity() {
-    lateinit var binding:ActivityTabsBinding
+class TabsWithViewPager2Actvitiy : AppCompatActivity() {
+    lateinit var binding: ActivityTabsWithViewPager2ActvitiyBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityTabsBinding.inflate(layoutInflater)
+        binding = ActivityTabsWithViewPager2ActvitiyBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setTitle(R.string.app_name)
@@ -31,8 +25,27 @@ class TabsActivity : AppCompatActivity() {
         tabFragment.arguments = bundle
         supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, tabFragment).commit()
 
+        binding.viewPager2.adapter = ViewPager2Adapter(this)
+        binding.viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels)
+                binding.tabLayout.getTabAt(position)
+            }
 
-        binding.tabLayout.addOnTabSelectedListener(object :TabLayout.OnTabSelectedListener{
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                binding.tabLayout.selectTab(binding.tabLayout.getTabAt(position))
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {
+                super.onPageScrollStateChanged(state)
+            }
+        })
+        binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 when(tab?.position){
                     0->{
@@ -69,5 +82,4 @@ class TabsActivity : AppCompatActivity() {
 
         })
     }
-
 }
