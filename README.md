@@ -1,3 +1,3 @@
-#Task 7: TabLayout and ViewPager2
- #Demo: https://github.com/Sahelmulagund/Allwork/blob/Demos/Edited_20211001_103232.mp4
+#Task 8: Google map and camera
+ #Demo: https://drive.google.com/file/d/1boIFuOMKwZ4x4rEEKQ7r6H-jwf-BFE9h/view?usp=drivesdk
 
