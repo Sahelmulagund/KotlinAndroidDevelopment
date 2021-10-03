@@ -88,6 +88,18 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this, TabsWithViewPager2Actvitiy::class.java))
                 true
             }
+            R.id.action_maps_activity->{
+                startActivity(Intent(this, MapsActivity::class.java))
+                true
+            }
+            R.id.action_places_activity->{
+                startActivity(Intent(this, AutoCompletePlacesActivity::class.java))
+                true
+            }
+            R.id.action_image_activity ->{
+                startActivity(Intent(this, ImageActvitiy::class.java))
+                true
+            }
 
             else -> super.onOptionsItemSelected(item)
         }

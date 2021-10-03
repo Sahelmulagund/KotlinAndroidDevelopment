@@ -47,5 +47,19 @@
         android:orderInCategory="100"
         android:title="@string/act_tabs_with_viewpager2"
         app:showAsAction="never" />
-
+    <item
+        android:id="@+id/action_maps_activity"
+        android:orderInCategory="100"
+        android:title="@string/act_map"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_places_activity"
+        android:orderInCategory="100"
+        android:title="@string/act_places"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_image_activity"
+        android:orderInCategory="100"
+        android:title="@string/act_image"
+        app:showAsAction="never"/>
 </menu>

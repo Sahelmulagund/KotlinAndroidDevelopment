@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Training</string>
     <string name="action_settings">Settings</string>
+    <string name="api_key">AIzaSyAKamkzZEewlCs5ZkDi5DjoFtwZdu7yr5g</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -87,5 +88,15 @@
     <string name="act_tabs_with_viewpager2">Tabs with ViewPager2</string>
     <string name="act_slider">ViewPager2Slider</string>
     <string name="act_tabs">Tabs</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_rationale">We need this permission</string>
+    <string name="desc_rationale">This app relies on this permission. We require access to make your experience better with us. We will not share any user data with third party apps. For further info read our privacy policy</string>
+    <string name="act_map">Maps Activity</string>
+    <string name="act_places">PLaces Activity</string>
+    <string name="select_image">Select Image</string>
+    <string name="take_picture">Take picture</string>
+    <string name="choose_from_gallery">Choose from gallery</string>
+    <string name="desc">Desc</string>
+    <string name="act_image">Camera Request Activity</string>
 
 </resources>
