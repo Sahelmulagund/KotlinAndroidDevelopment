@@ -1,3 +1,3 @@
-#Task 7: TabLayout and ViewPager2
- #Demo: https://github.com/Sahelmulagund/Allwork/blob/Demos/Edited_20211001_103232.mp4
+#Task 9 : Api calling and viewmodel
+ #Demo: https://drive.google.com/file/d/1fZ0bj0JYc4FBlBXgXMwVcpg_pEr5m6RT/view?usp=drivesdk
 
