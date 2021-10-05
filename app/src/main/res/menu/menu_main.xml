@@ -62,4 +62,14 @@
         android:orderInCategory="100"
         android:title="@string/act_image"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/act_photos"
+        android:orderInCategory="100"
+        android:title="@string/photos_activity"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/act_posts"
+        android:orderInCategory="100"
+        android:title="@string/posts_activity"
+        app:showAsAction="never"/>
 </menu>

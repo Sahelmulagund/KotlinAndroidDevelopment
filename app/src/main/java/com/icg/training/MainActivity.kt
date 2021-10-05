@@ -100,6 +100,18 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this, ImageActvitiy::class.java))
                 true
             }
+            R.id.act_photos->{
+                startActivity(Intent(this, PhotosActivity::class.java))
+                true
+
+
+            }
+            R.id.act_posts->{
+                startActivity(Intent(this, PostsActivity::class.java))
+                true
+
+
+            }
 
             else -> super.onOptionsItemSelected(item)
         }

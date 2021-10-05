@@ -98,5 +98,8 @@
     <string name="choose_from_gallery">Choose from gallery</string>
     <string name="desc">Desc</string>
     <string name="act_image">Camera Request Activity</string>
+    <string name="image">Image</string>
+    <string name="photos_activity">Photos Activity</string>
+    <string name="posts_activity">Posts Activity</string>
 
 </resources>
