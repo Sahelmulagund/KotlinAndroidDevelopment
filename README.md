@@ -1,3 +1,3 @@
-#Task 7: TabLayout and ViewPager2
- #Demo: https://github.com/Sahelmulagund/Allwork/blob/Demos/Edited_20211001_103232.mp4
+#Task 10: Repository pattern
+ #Demo: https://drive.google.com/file/d/1Z2JWMMCtw2yXjhm2KfykHTEk4dkYDJZJ/view?usp=sharing
 
