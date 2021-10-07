@@ -2,27 +2,26 @@ package com.icg.training
 
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
 import com.icg.training.adapter.PhotosAdapter
 import com.icg.training.databinding.ActivityPhotosBinding
-import com.icg.training.repository.MainRepository
-import com.icg.training.retrofit.RetrofitClient
+import com.icg.training.result.Result
+import com.icg.training.viewmodelfactory.ViewModelFactory
 import com.icg.training.viewmodels.PhotosViewModel
-import kotlinx.android.synthetic.main.app_bar.*
-import kotlinx.android.synthetic.main.common_app_bar.*
 
 class PhotosActivity : AppCompatActivity() {
    private lateinit var binding:ActivityPhotosBinding
-    private val retrofitService = RetrofitClient.getInstance()
+
     lateinit var adapter:PhotosAdapter
-    private lateinit var photoViewModelFactory:PhotosViewModel.PhotoViewModelFactory
-    private val photosViewModel by lazy {
-        ViewModelProvider(this, photoViewModelFactory).get(PhotosViewModel::class.java)
-    }
+//    private  var photoViewModelFactory: ViewModelFactory
+//    private val photosViewModel by lazy {
+//        ViewModelProvider(this, photoViewModelFactory).get(PhotosViewModel::class.java)
+//    }
+
+    private val photosViewModel by viewModels<PhotosViewModel>{ViewModelFactory()}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPhotosBinding.inflate(layoutInflater)
@@ -30,13 +29,9 @@ class PhotosActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         binding.toolbar.title = this.title
 
-         photoViewModelFactory = PhotosViewModel.PhotoViewModelFactory(savedInstanceState,
-             MainRepository(retrofitService)
-         )
-
+         photosViewModel.getPhotos()
          adapter = PhotosAdapter()
         subscribeToObservers()
-
         binding.recyclerview.adapter = adapter
 
        val lm = GridLayoutManager(this, 6)
@@ -62,16 +57,13 @@ class PhotosActivity : AppCompatActivity() {
 
     }
    private fun subscribeToObservers(){
-       photosViewModel.getPhotos()
-       photosViewModel.photoList.observe(this, Observer {
-           if (it != null) {
-               adapter.photos = it.toMutableList()
 
-           }
+       photosViewModel.obResult.observe(this, {
+          when(it){
+              is Result.Success->{ adapter.photos = it.value.body()?.toMutableList() }
+              is Result.Failure->{Toast.makeText(this, it.message,Toast.LENGTH_SHORT).show()}
+          }
 
-       })
-       photosViewModel.errorMessage.observe(this, Observer {
-           Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
        })
 
    }

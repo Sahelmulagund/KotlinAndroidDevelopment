@@ -81,7 +81,7 @@ class ImageActvitiy : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when(requestCode){
             1002->if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
-               Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show()
+                 takeImage()
 
             }else {
                 AlertDialog.Builder(this)
@@ -99,8 +99,7 @@ class ImageActvitiy : AppCompatActivity() {
 
             }
             1003->if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show()
-
+               selectImageFromGallery()
             }else {
                 AlertDialog.Builder(this)
                     .setMessage("This permission is disabled. Enable it from settings")
