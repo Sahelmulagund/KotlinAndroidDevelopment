@@ -1,3 +1,3 @@
-#Task 8: Google map and camera
- #Demo: https://drive.google.com/file/d/1boIFuOMKwZ4x4rEEKQ7r6H-jwf-BFE9h/view?usp=drivesdk
+#Task 8: Google map and camera updated demo
+ #Demo: https://drive.google.com/file/d/1dmZZimnvmexFmtbO8LJ8-u0Gt7pOqVLA/view?usp=sharing
 
