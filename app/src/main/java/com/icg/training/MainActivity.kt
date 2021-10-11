@@ -11,6 +11,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.icg.training.databinding.ActivityMainBinding
+import com.icg.training.presentation.view.DogsActivity
+import com.icg.training.presentation.view.DogsAutoLoadActivity
+import com.icg.training.presentation.view.DogsBreedImageActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -111,6 +114,18 @@ class MainActivity : AppCompatActivity() {
                 true
 
 
+            }
+            R.id.act_dogs->{
+                startActivity(Intent(this,DogsActivity::class.java))
+                true
+            }
+            R.id.act_dog_auto->{
+                startActivity(Intent(this,DogsAutoLoadActivity::class.java))
+                true
+            }
+            R.id.act_dogs_breed_img->{
+                startActivity(Intent(this,DogsBreedImageActivity::class.java))
+                true
             }
 
             else -> super.onOptionsItemSelected(item)

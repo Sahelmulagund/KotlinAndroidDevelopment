@@ -72,4 +72,19 @@
         android:orderInCategory="100"
         android:title="@string/posts_activity"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/act_dogs"
+        android:orderInCategory="100"
+        android:title="@string/dogs_activity"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/act_dog_auto"
+        android:orderInCategory="100"
+        android:title="@string/dogs_activity_auto"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/act_dogs_breed_img"
+        android:orderInCategory="100"
+        android:title="@string/dogs_activity_breed"
+        app:showAsAction="never"/>
 </menu>

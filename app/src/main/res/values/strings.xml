@@ -101,5 +101,9 @@
     <string name="image">Image</string>
     <string name="photos_activity">Photos Activity</string>
     <string name="posts_activity">Posts Activity</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="dogs_activity">Dogs Activity</string>
+    <string name="dogs_activity_breed">Breed and Image</string>
+    <string name="dogs_activity_auto">Reload Breed</string>
 
 </resources>

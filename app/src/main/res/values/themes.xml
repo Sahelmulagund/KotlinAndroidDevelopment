@@ -18,10 +18,12 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="ButtonStyle" parent="Widget.AppCompat.Button">
         <item name="android:backgroundTint" tools:targetApi="lollipop">@color/material_red</item>
 
     </style>
+
     <style name="Theme.Training.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Training.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

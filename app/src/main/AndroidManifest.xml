@@ -19,6 +19,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:name=".common.BaseApp"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
@@ -27,7 +28,14 @@
         android:theme="@style/Theme.Training"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".PostDetailActivity"></activity>
+        <activity android:name=".presentation.view.DogsBreedImageActivity"></activity>
+        <activity android:name=".presentation.view.DogsAutoLoadActivity" />
+        <activity android:name=".presentation.view.DogsActivity" />
+        <activity
+            android:name=".base.BaseActivity"
+            android:label="@string/title_activity_base"
+            android:theme="@style/Theme.Training.NoActionBar" />
+        <activity android:name=".PostDetailActivity" />
         <activity android:name=".PhotosActivity" />
         <activity android:name=".PostsActivity" />
         <activity android:name=".ImageActvitiy" />
