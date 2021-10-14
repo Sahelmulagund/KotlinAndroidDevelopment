@@ -1,3 +1,2 @@
-#Task 7: TabLayout and ViewPager2
- #Demo: https://github.com/Sahelmulagund/Allwork/blob/Demos/Edited_20211001_103232.mp4
-
+#Task 10A: Repository pattern and coroutines
+ #Demo:https://drive.google.com/file/d/1ouh0OVi47R8h-hRgVwT9ci33OaVxHq7A/view?usp=sharing
