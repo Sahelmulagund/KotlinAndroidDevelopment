@@ -19,52 +19,39 @@ import kotlinx.android.synthetic.main.activity_dogs_breed_image.toolbar
 
 class DogsBreedImageActivity : AppCompatActivity() {
     private val dogsVM by viewModels<dogsViewModel>{ DogVMFactory() }
-    private lateinit var adapters:BreedAdapter
+   private val adapter by lazy(LazyThreadSafetyMode.NONE) {BreedAdapter()}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dogs_breed_image)
         setSupportActionBar(toolbar)
         toolbar.title = this.title
 
-        subscribeToObservers()
+
         doFetchApi()
-         adapters = BreedAdapter(::breedName)
+        subscribeToObservers()
+        rvBreedImage.adapter = adapter
         rvBreedImage.apply {
-            adapter = adapters
+
             layoutManager = GridLayoutManager(applicationContext,2)
             setHasFixedSize(true)
         }
 
     }
 
-    private fun breedName(s: String) {
-        fetchImages(s)
 
-    }
 
     private fun doFetchApi() {
-        dogsVM.getDogsList()
+        dogsVM.getDogListSynchronously()
     }
-    private fun fetchImages(breedName:String){
-        dogsVM.getDogImage(breedName)
-    }
+
     private fun subscribeToObservers() {
 
-        var tempArr:MutableList<String> = ArrayList<String>()
-        var tempImgArr:MutableList<DogsBreedImage> = ArrayList<DogsBreedImage>()
+
         dogsVM.obDogsList.observe(this,{
             when(it){
                 is ResultOf.Progress -> showToast(if(it.loading) "Loading.. " else "Loaded")
                 is ResultOf.Success -> {
-                    tempArr = it.value.toMutableList()
-                    tempArr.sortBy { name->
-                        name
-                    }
-                    adapters.breed = tempArr
-                  tempArr.forEach { tem->
-                      fetchImages(tem)
-                  }
-
+                    adapter.breed = it.value
                 }
                 is ResultOf.Empty -> showToast("No data available!")
                 is ResultOf.Failure -> {
@@ -73,32 +60,7 @@ class DogsBreedImageActivity : AppCompatActivity() {
             }
         })
 
-        dogsVM.obDogsImage.observe(this, {
-            when(it){
-                is ResultOf.Progress -> showToast(if(it.loading) "Loading.. " else "Loaded")
-                is ResultOf.Success -> {
-                    tempImgArr.add(it.value)
-                    tempImgArr.sortBy {
-                        dogsBreedImage ->
-                        dogsBreedImage.message
-                    }
-                    if (tempImgArr.size == tempArr.size){
-                        adapters.imgDog = tempImgArr
-                    }
-//                    tempImgArr.forEach {dogsBreedImage ->
-//                    showToast("I"+tempImgArr.size!!.toString())
-//                    showToast("B"+tempArr.size.toString())
 
-//
-//                    }
-
-                }
-                is ResultOf.Empty -> showToast("No breed available!")
-                is ResultOf.Failure -> {
-                    showToast(it.message!!)
-                }
-            }
-        })
     }
 
 }
