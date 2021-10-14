@@ -17,9 +17,9 @@ data class DogsBreedImage(
     @Json(name = "message")
     val message: String?=""
 )
-data class DogsBreed(
-
-    val breedName:List<String>?=null
+data class Dog(
+    val breed : String?,
+    val imageUrl: String?
 )
 data class Name(
     val name:String?=null

@@ -4,24 +4,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 import com.icg.training.R
-import com.icg.training.model.InfoModel
-import com.icg.training.presentation.dogsbreed.model.DogsBreedImage
+import com.icg.training.presentation.dogsbreed.model.Dog
+import com.icg.training.util.GlideApp
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.layout_recycler_android_versions.view.*
 import kotlinx.android.synthetic.main.rv_breed_imaged.view.*
 
-class BreedAdapter(val callable:(String)->Unit):RecyclerView.Adapter<BreedAdapter.VH>() {
-    var breed:List<String>?=null
+class BreedAdapter:RecyclerView.Adapter<BreedAdapter.VH>() {
+    var breed:List<Dog>?=null
         set(value) {
             field = value
             notifyDataSetChanged()
         }
-    var imgDog:List<DogsBreedImage>?=null
-    set(value) {
-        field = value
-        notifyDataSetChanged()
-    }
+
     inner class VH(itemView : View) : RecyclerView.ViewHolder(itemView){
 
         init {
@@ -32,13 +29,14 @@ class BreedAdapter(val callable:(String)->Unit):RecyclerView.Adapter<BreedAdapte
             }
         }
 
-        fun bind(data: String?) {
+        fun bind(data: Dog?) {
             //itemView.tag = data
             with(itemView){
-                tvBreedName.text = data
-                if (imgDog?.isNotEmpty() == true){
-                    Picasso.get().load(imgDog?.get(adapterPosition)?.message).into(ivBreed)
-                }
+                tvBreedName.text = data?.breed
+//                GlideApp.with(context).asBitmap().load(data?.imageUrl).apply( RequestOptions().diskCacheStrategy(
+//                    DiskCacheStrategy.NONE)).into(ivBreed)
+                Picasso.get().load(data?.imageUrl).into(ivBreed)
+
             }
         }
     }

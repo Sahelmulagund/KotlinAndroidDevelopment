@@ -4,12 +4,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
-import com.google.gson.JsonParser
 import com.icg.training.data.model.ResultOf
 import com.icg.training.presentation.dogsbreed.domain.IDogsRepo
-import com.icg.training.presentation.dogsbreed.model.Breeds
+import com.icg.training.presentation.dogsbreed.model.Dog
 import com.icg.training.presentation.dogsbreed.model.DogsBreedImage
-import com.squareup.moshi.Json
+import com.icg.training.result.Result
+import com.icg.training.util.launchPeriodically
 import kotlinx.coroutines.*
 import org.json.JSONObject
 import kotlin.coroutines.*
@@ -19,58 +19,47 @@ class dogsViewModel(val dogsRepo:IDogsRepo):ViewModel(),CoroutineScope {
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.Main + parentJob
 
-    val obDogsList = MutableLiveData<ResultOf<List<String>>?>()
-    val obDogsImage = MutableLiveData<ResultOf<DogsBreedImage>>()
+    val obDogsList = MutableLiveData<ResultOf<List<Dog>>?>()
+//    val obDogsImage = MutableLiveData<ResultOf<DogsBreedImage>>()
 
     fun performDelayAction(){
         viewModelScope.launch {
             withContext(Dispatchers.IO){
                 delay(3000)
-
+           
             }
         }
     }
 
-    fun getDogImage(breedName:String){
-        launch {
-            runCatching {
-                dogsRepo.getDogsImage(breedName)
-            }.onSuccess {
-                if (it == null){
-                    obDogsImage.value = ResultOf.Empty("No Dog Breed Found")
-                }else{
 
-                    obDogsImage.value = ResultOf.Success(it)
+    fun getDogListAutoReload(){
 
+        viewModelScope.launchPeriodically(6000){
+            launch {
+                val list = runCatching { dogsRepo.getAllDogsBreedAsync() }
+                list.onSuccess {
+                    obDogsList.value = it
                 }
-            }.onFailure {
-                obDogsImage.value = ResultOf.Failure(it.localizedMessage!!)
+            }
+        }
+
+    }
+    fun getDogList(){
+        viewModelScope.launch {
+            runCatching {
+                dogsRepo.getAllDogsBreedAsync()
+            }.onSuccess {
+                obDogsList.value = it
             }
         }
     }
-    fun getDogsList(){
-        launch {
+
+    fun getDogListSynchronously(){
+        viewModelScope.launch {
             runCatching {
-                dogsRepo.getAllDogsBreed()
+                dogsRepo.getAllDogsAndImageList()
             }.onSuccess {
-                if (it == null)
-                    obDogsList.value = ResultOf.Empty("No Dog Breed Found")
-                else {
-                    val tempArr = ArrayList<String>()
-                    val toJson = Gson().toJson(it)
-
-                    val obj = JSONObject(toJson)
-                    val listJsonPath = obj.getJSONObject("message")
-                    val itr = listJsonPath.keys()
-                    while (itr.hasNext()){
-                        tempArr.add(itr.next())
-                    }
-
-                    obDogsList.value = ResultOf.Success(tempArr)
-
-                }
-            }.onFailure {
-                obDogsList.value = ResultOf.Failure(it.localizedMessage)
+                obDogsList.value = it
             }
         }
     }
