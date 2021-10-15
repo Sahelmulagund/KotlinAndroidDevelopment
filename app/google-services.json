@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "160785551879",
+    "project_id": "training-869a7",
+    "storage_bucket": "training-869a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160785551879:android:60e140966d59ec59f010a2",
+        "android_client_info": {
+          "package_name": "com.icg.training"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160785551879-pdkok1fvq0lg7l1bqapjtg01dsf1m51p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_dQM4FNKVGdesTJjlWAaq6a0NL9STFIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "160785551879-pdkok1fvq0lg7l1bqapjtg01dsf1m51p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

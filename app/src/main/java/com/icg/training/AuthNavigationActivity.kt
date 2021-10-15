@@ -1,15 +1,30 @@
 package com.icg.training
 
-import androidx.appcompat.app.AppCompatActivity
+import android.R.attr.key
+import android.content.Intent
 import android.os.Bundle
-import androidx.core.content.ContextCompat
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import kotlinx.android.synthetic.main.app_bar.*
+
 
 class AuthNavigationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth_navigation)
+
+
+//            val extras = intent.extras
+
+            val data = intent.extras?.getString("data", "notOpen")
+            if (data.toString() != "notOpen" && data != null){
+
+                val c = Class.forName(data)
+                startActivity(Intent(this,c))
+            }else{
+                Log.v("intentNoValue", "intent No Value")
+            }
+
 
 
         val navController = findNavController(R.id.nav_controller_auth)
@@ -22,4 +37,6 @@ class AuthNavigationActivity : AppCompatActivity() {
 
 
     }
+
+
 }
